@@ -1,0 +1,31 @@
+body {
+  background-color: #34343c;
+}
+
+.card-custom {
+  transition: transform 0.3s;
+}
+
+.zoom-on-hover:hover {
+  transform: scale(1.05);
+}
+
+.card-custom:hover .btn-custom {
+  background-color: #28a745;
+  border-color: #28a745;
+  color: #fff;
+}
+
+.btn-volver {
+  color: #28a745;
+  background-color: transparent;
+  border: 2px solid #28a745;
+  transition: all 0.3s ease;
+}
+
+.btn-volver:hover {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #28a745;
+  
+}
