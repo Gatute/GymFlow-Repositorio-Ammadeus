@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión | GYMFLOW</title>
+    <link rel="stylesheet" href="{%static 'CSS/login.css' %}?v=1">
+</head>
+<body>
+    <video class="w-100" autoplay muted loop>
+        <source src="{% static 'img/GYMVIDEO.mp4' %}" type="video/mp4">
+        Tu navegador no soporta videos.
+    </video>
+    {% block contenido%}
+    <div class="login-box">
+        <img src="{% static 'img/GYM-FLOW-LOGO.png' %}" class="avatar" alt="Avatar Image">
+        <h1>Inicia sesión en GYMFLOW</h1>
+        <form action="{% url 'logein' %}" method="POST">
+          {% csrf_token %}
+          <!-- INTRODUCCIÓN DE NOMBRE -->
+          <label for="username">Usuario</label>
+          <input type="text" name="usuario" id="usuario" placeholder="Ingrese su nombre de usuario" required>
+          <!-- INTRODUCCIÓN DE CONTRASEÑA -->
+          <label for="password">Clave</label>
+          <input type="password" name="pass" id="pass" placeholder="Ingrese su contraseña" required>
+          <input type="submit" value="Iniciar Sesión">
+          {% if form.errors %}
+            <p class="error">Usuario o contraseña incorrectos. Por favor, inténtelo de nuevo.</p>
+          {% endif %}
+    {%endblock %}
+        </form>
+      </div>
+</body>
+</html>
